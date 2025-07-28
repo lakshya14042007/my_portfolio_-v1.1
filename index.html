@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lakshya's Portfolio</title>
+  <style>
+    /* === Base Reset === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00f7ff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00f7ff;
+    }
+
+    section {
+      padding: 80px 40px;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00f7ff;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: #00f7ff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #00c4cc;
+    }
+
+    #projects h2, #about h2, #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00f7ff;
+    }
+
+    .project-card {
+      background: #1a1a1a;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 5px solid #00f7ff;
+      border-radius: 10px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #222;
+      color: #fff;
+      resize: none;
+    }
+
+    button {
+      padding: 10px;
+      background: #00f7ff;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00c4cc;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">💻 Lakshya</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Hi, I'm Lakshya 👋</h1>
+    <p>A passionate Web Developer building the future</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>🎮 Quiz App</h3>
+    <p>A KBC-style quiz game with levels and points using JSON & JS.</p>
+    <a href="https://lakshya14042007.github.io/jeequiz-prortotype/" target="_blank" class="btn" style="background:#444; color:#fff;">View on GitHub</a>
+  </div>
+
+  <div class="project-card">
+    <h3>📋 Task Manager</h3>
+    <p>Task tracker with XP system and localStorage persistence.</p>
+    <a href="https://lakshya14042007.github.io/tasker_lakshya/" target="_blank" class="btn" style="background:#444; color:#fff;">View on GitHub</a>
+  </div>
+
+  <div class="project-card">
+  <h3>🧮 Calculator App</h3>
+  <p>A simple calculator built using HTML, CSS, and JavaScript. Supports basic arithmetic operations with clean UI.</p>
+  <a href="https://lakshya14042007.github.io/lakshya_calc" target="_blank" class="btn" style="background:#444; color:#fff;">🐙 View on GitHub</a>
+</div>
+
+
+</section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a self-taught web developer who loves building clean, creative, and interactive web apps. Currently learning full-stack dev and always vibing with code 🎧💻.
+    </p>
+  </section>
+
+ <section id="contact">
+  <h2>Contact Me</h2>
+  <form action="https://formspree.io/f/mqalqvyw" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  <p style="text-align:center; margin-top:20px; color:#00f7ff;">📩 Your message will be delivered to me securely via email!</p>
+</section>
+
+
+ <footer>
+  <p>&copy; 2025 Lakshya Sharma</p>
+  <p>📢 Join my <a href=https://t.me/web_dev_projectshttps://t.me/web_dev_projects" target="_blank" style="color:#00f7ff; text-decoration:underline;">Telegram Channel</a></p>
+</footer>
+
+
+  
+</body>
+</html>
