@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lakshya's Portfolio</title>
   <style>
-    /* === Base Reset === */
-    * {
+   {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -144,17 +143,32 @@
       color: #aaa;
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-      }
+   @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
 
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
   </style>
 </head>
 <body>
