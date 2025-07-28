@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lakshya's Portfolio</title>
   <style>
-   {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -33,6 +33,13 @@
     .logo {
       font-size: 1.5rem;
       font-weight: bold;
+      color: #00f7ff;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
       color: #00f7ff;
     }
 
@@ -143,39 +150,47 @@
       color: #aaa;
     }
 
-   @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-  }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
 
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
-  }
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        background-color: #111;
+        width: 100%;
+        padding: 20px;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+      }
 
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
+      .nav-links.active {
+        left: 0;
+      }
 
-  .nav-links a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-  }
-}
+      .nav-links li {
+        width: 100%;
+        margin: 10px 0;
+      }
 
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo">💻 Lakshya</div>
-    <ul class="nav-links">
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#about">About</a></li>
@@ -190,28 +205,26 @@
   </section>
 
   <section id="projects">
-  <h2>Projects</h2>
+    <h2>Projects</h2>
 
-  <div class="project-card">
-    <h3>🎮 Quiz App</h3>
-    <p>A KBC-style quiz game with levels and points using JSON & JS.</p>
-    <a href="https://lakshya14042007.github.io/jeequiz-prortotype/" target="_blank" class="btn" style="background:#444; color:#fff;">View on GitHub</a>
-  </div>
+    <div class="project-card">
+      <h3>🎮 Quiz App</h3>
+      <p>A KBC-style quiz game with levels and points using JSON & JS.</p>
+      <a href="https://lakshya14042007.github.io/jeequiz-prortotype/" target="_blank" class="btn" style="background:#444; color:#fff;">View on GitHub</a>
+    </div>
 
-  <div class="project-card">
-    <h3>📋 Task Manager</h3>
-    <p>Task tracker with XP system and localStorage persistence.</p>
-    <a href="https://lakshya14042007.github.io/tasker_lakshya/" target="_blank" class="btn" style="background:#444; color:#fff;">View on GitHub</a>
-  </div>
+    <div class="project-card">
+      <h3>📋 Task Manager</h3>
+      <p>Task tracker with XP system and localStorage persistence.</p>
+      <a href="https://lakshya14042007.github.io/tasker_lakshya/" target="_blank" class="btn" style="background:#444; color:#fff;">View on GitHub</a>
+    </div>
 
-  <div class="project-card">
-  <h3>🧮 Calculator App</h3>
-  <p>A simple calculator built using HTML, CSS, and JavaScript. Supports basic arithmetic operations with clean UI.</p>
-  <a href="https://lakshya14042007.github.io/lakshya_calc" target="_blank" class="btn" style="background:#444; color:#fff;">🐙 View on GitHub</a>
-</div>
-
-
-</section>
+    <div class="project-card">
+      <h3>🧮 Calculator App</h3>
+      <p>A simple calculator built using HTML, CSS, and JavaScript. Supports basic arithmetic operations with clean UI.</p>
+      <a href="https://lakshya14042007.github.io/lakshya_calc" target="_blank" class="btn" style="background:#444; color:#fff;">🐙 View on GitHub</a>
+    </div>
+  </section>
 
   <section id="about">
     <h2>About Me</h2>
@@ -220,24 +233,42 @@
     </p>
   </section>
 
- <section id="contact">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/mqalqvyw" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
-  <p style="text-align:center; margin-top:20px; color:#00f7ff;">📩 Your message will be delivered to me securely via email!</p>
-</section>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mqalqvyw" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p style="text-align:center; margin-top:20px; color:#00f7ff;">📩 Your message will be delivered to me securely via email!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Lakshya Sharma</p>
+    <p>📢 Join my 
+      <a href="https://t.me/web_dev_projects" target="_blank" style="color:#00f7ff; text-decoration:underline;">Telegram Channel</a>
+    </p>
+  </footer>
+
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+ 
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 
 
- <footer>
-  <p>&copy; 2025 Lakshya Sharma</p>
-  <p>📢 Join my <a href=https://t.me/web_dev_projectshttps://t.me/web_dev_projects" target="_blank" style="color:#00f7ff; text-decoration:underline;">Telegram Channel</a></p>
-</footer>
+  const navItems = navLinks.querySelectorAll("a");
+  navItems.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+</script>
 
 
-  
 </body>
 </html>
